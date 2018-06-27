@@ -17,11 +17,11 @@ public class MoveWarrior : MonoBehaviour
     {
 		if(Input.GetKey(KeyCode.UpArrow))
         {
-            transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
+            transform.Translate(Vector3.up * moveSpeed * Time.deltaTime);
         }
         else if(Input.GetKey(KeyCode.DownArrow))
         {
-            transform.Translate(-Vector3.forward * moveSpeed * Time.deltaTime);
+            transform.Translate(Vector3.down * moveSpeed * Time.deltaTime);
         }
 	}
 }
