@@ -29,7 +29,13 @@ public class MoveWarrior : MonoBehaviour
         if(Input.GetKey(KeyCode.LeftArrow))
         {
             if(facing > 0 )
-            facing--;
+            {
+                facing++;
+            }
+            else
+            {
+                facing = 3;
+            }
         }
         else if(Input.GetKey(KeyCode.RightArrow))
         {
@@ -37,40 +43,57 @@ public class MoveWarrior : MonoBehaviour
             {
                 facing++;
             }
-        }
-
-        if(Input.GetKey(KeyCode.LeftArrow))
-        {
-            switch(facing)
+            else
             {
-                case 0:
-                    facing = 3;
-                    break;
-
-                case 1:
-                    facing = 0;
-                    break;
-
-                case 2:
-                    facing = 3;
-                    break;
-
-                case 3:
-                    facing = 0;
-                    break;
-
-                default: break;
+                facing = 0;
             }
         }
+
+        
+        switch(facing)
+        {
+            case 0:
+                facing = 3;
+                Debug.Log("Facing = " + facing);
+                break;
+
+            case 1:
+                facing = 0;
+                Debug.Log("Facing = " + facing);
+                break;
+
+            case 2:
+                facing = 3;
+                Debug.Log("Facing = " + facing);
+                break;
+
+            case 3:
+                facing = 0;
+                Debug.Log("Facing = " + facing);
+                break;
+
+            default: break;
+        }
+        
 
         switch(facing)
         {
             case 0:
-                transform.Rotate(new Vector3(0, 0, 0));
+                //transform.Rotate(Vector3.up);
+                transform.rotation.Set(0, 0, 0, 0);
                 break;
 
             case 1:
-                transform.Rotate(new Vector3(90, 0, 0));
+                //transform.Rotate(Vector3.right);
+                transform.rotation.Set(90, 0, 0, 0);
+                break;
+
+            case 2:
+                transform.rotation.Set(180, 0, 0, 0);
+                break;
+
+            case 3:
+                transform.rotation.Set(-90, 0, 0, 0);
                 break;
 
             default: break;
