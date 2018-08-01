@@ -25,6 +25,14 @@ public class MoveWarrior : MonoBehaviour
         {
             transform.Translate(Vector3.down * moveSpeed * Time.deltaTime);
         }
+        else if(Input.GetKey(KeyCode.LeftArrow))
+        {
+            transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
+        }
+        else if(Input.GetKey(KeyCode.RightArrow))
+        {
+            transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
+        }
 
         if(Input.GetKey(KeyCode.LeftArrow))
         {
